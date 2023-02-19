@@ -1,3 +1,35 @@
+import numpy as np
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+import cv2
+import glob
+import pickle
+# Define a class to receive the characteristics of each line detection
+class Line():
+    def __init__(self):
+        # was the line detected in the last iteration?
+        self.detected = False  
+        # x values of the last n fits of the line
+        self.recent_xfitted = [] 
+        #average x values of the fitted line over the last n iterations
+        self.bestx = None     
+        #polynomial coefficients averaged over the last n iterations
+        self.best_fit = None  
+        #polynomial coefficients for the most recent fit
+        self.current_fit = [np.array([False])]  
+        #radius of curvature of the line in some units
+        self.radius_of_curvature = None 
+        #distance in meters of vehicle center from the line
+        self.line_base_pos = None 
+        #difference in fit coefficients between last and new fits
+        self.diffs = np.array([0,0,0], dtype='float') 
+        #x values for detected line pixels
+        self.allx = None  
+        #y values for detected line pixels
+        self.ally = None  
+   
+images=glob.glob('C:/New_codes/CarND-Camera-Calibration/camera_cal/calibration*.jpg')
+  
 def Camera_Calibration(images):
     nx=9
     ny=6
@@ -34,16 +66,19 @@ def Camera_Calibration(images):
 
     # Do camera calibration given object points and image points
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, img_size,None,None)
-    
-    
+    # Save the camera calibration result for later use
     return mtx, dist
 
-ret, mtx, dist, rvecs, tvecs =Camera_Calibration(images)
+mtx, dist=Camera_Calibration(images)
+# Load image for reference
+img = cv2.imread('./camera_cal/calibration1.jpg')
+img_size = (img.shape[1], img.shape[0])
 
-# Save the camera calibration result for later use
-    dist_pickle = {}
-    dist_pickle['mtx'] = mtx
-    dist_pickle['dist'] = dist
-with open('dist_pickle.pickle', 'wb') as f:
-        # Pickle the 'data' dictionary using the highest protocol available.
-        pickle.dump(dist_pickle, f)
+# Perform camera clibration given object points and image points
+
+# Undistort the image
+img_test = cv2.undistort(img, mtx, dist, None, mtx)
+cv2.imshow('img_test',img_test)
+cv2.imwrite('Undistorted.jpg', img_test)
+cv2.waitKey(1000)
+
