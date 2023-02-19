@@ -56,3 +56,10 @@ After applying calibration, thresholding, and a perspective transform to a road 
 <img src="https://user-images.githubusercontent.com/103825664/219980460-73e32a35-5b79-4b9a-88bf-dedc220d13d9.png" width="420" height="240">
 
 
+With this histogram I add up the pixel values along each column in the image. In the thresholded binary image, pixels are either 0 or 1, so the two most prominent peaks in the histogram will be the indicators of the x-position of the base of the lane lines.
+
+A plot of the search windows and the fitted lane lines are shown below:
+
+<img src="https://user-images.githubusercontent.com/103825664/219981343-053ac22e-0490-4287-854b-713e7076120a.png" width="420" height="240">
+
+### Determine Curvature of Lane and Vehicle Position
