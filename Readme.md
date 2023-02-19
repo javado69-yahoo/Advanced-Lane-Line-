@@ -63,3 +63,7 @@ A plot of the search windows and the fitted lane lines are shown below:
 <img src="https://user-images.githubusercontent.com/103825664/219981343-053ac22e-0490-4287-854b-713e7076120a.png" width="420" height="240">
 
 ### Determine Curvature of Lane and Vehicle Position
+
+The radius of curvature of the lane at a particular point is defined as the radius of the approximating circle, which changes as we move along the curve. I used the estimated figures given in the project lectures based on U.S. regulations that require a minimum lane width of 3.6 meters and dashed lane lines of 3 meters long each.
+
+
