@@ -28,7 +28,7 @@ I started by preparing "object points", which will be the (x,y,z) coordinates of
 
 Using the camera matrix and distortion coefficients produced in the previous step, I undistort all incoming raw images using the OpenCV undistort() function.
 Notice the **white car**.
-<img src="https://user-images.githubusercontent.com/103825664/219967350-6bca29ac-750f-4381-ba37-98a41879a693.jpg" width="420" height="240"> <img src="https://user-images.githubusercontent.com/103825664/219967373-2c9f56da-72af-4105-91a7-f5183d272764.jpg" width="420" height="240">
+<img src="https://user-images.githubusercontent.com/103825664/219967350-6bca29ac-750f-4381-ba37-98a41879a693.jpg" width="420" height="240">  <img src="https://user-images.githubusercontent.com/103825664/219967373-2c9f56da-72af-4105-91a7-f5183d272764.jpg" width="420" height="240">
 
 
 
