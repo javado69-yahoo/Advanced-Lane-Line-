@@ -37,3 +37,9 @@ In order to accurately find the lane lines in an image, I applied a number of th
 
 <img src="https://user-images.githubusercontent.com/103825664/219969697-2574f001-8088-42e8-8361-586012f0390b.jpeg" width="420" height="240">  <img src="https://user-images.githubusercontent.com/103825664/219969728-ab21b214-299a-4661-a700-9e100443f3f5.jpeg" width="420" height="240">
 
+When we apply the thresholding for the gradient magnitude it picks up the lane lines well, but with a lot of other stuff detected too. In the case of lane lines, we're interested only in edges of a particular orientation. So I apply a threshold on the direction of the gradient in order to filter out horizonal lines, as the lane lines should be relatively vertical (dir_threshold and mag_thresh).
+
+<img src="[https://user-images.githubusercontent.com/103825664/219969697-2574f001-8088-42e8-8361-586012f0390b.jpeg](https://user-images.githubusercontent.com/103825664/219972934-ee74eb29-1487-4cb6-b378-23c86703b28d.png)" width="420" height="240">  <img src="https://user-images.githubusercontent.com/103825664/219973017-f21cdb53-ec3d-4129-acfb-1250afec7b2c.jpg" width="420" height="240">
+
+
+
