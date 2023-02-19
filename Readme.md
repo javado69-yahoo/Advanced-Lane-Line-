@@ -49,5 +49,10 @@ I chose the source points and destination points in the way that the lane lines 
 <img src="https://user-images.githubusercontent.com/103825664/219979725-af04869c-049d-4b14-9d84-af3a01ba0995.png" width="840" height="240">
 
 
+### Line Finding Method: Peaks in a Histogram
+
+After applying calibration, thresholding, and a perspective transform to a road image, we have a binary image where the lane lines stand out clearly. However, to decide explicitly which pixels are part of the lines and which belong to the left line and which belong to the right line I plot a histogram of where the binary activations occur across the image.
+
+<img src="https://user-images.githubusercontent.com/103825664/219980460-73e32a35-5b79-4b9a-88bf-dedc220d13d9.png" width="420" height="240">
 
 
