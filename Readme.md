@@ -32,6 +32,8 @@ Notice the **white car** for an example.
 <img src="https://user-images.githubusercontent.com/103825664/219967350-6bca29ac-750f-4381-ba37-98a41879a693.jpg" width="420" height="240">  <img src="https://user-images.githubusercontent.com/103825664/219967373-2c9f56da-72af-4105-91a7-f5183d272764.jpg" width="420" height="240">
 
 ### Color and Gradient Threshold
+In order to accurately find the lane lines in an image, I applied a number of thresholding techniques to filter out potential noise (such as shadows, different color lanes, other cars, etc). From the course and training the S channel is doing a fairly robust job of picking up the lines under very different color and contrast conditions, while the other selections look messy. The R channel in RGB does rather well on the white lines, perhaps even better than the S channel in HLS. AS a result I combined S channel with Red channel tresholds which the reuslt for R and S are as follow (R channel (left) and the S channel (right)):
 
 
+<img src="https://user-images.githubusercontent.com/103825664/219969697-2574f001-8088-42e8-8361-586012f0390b.jpeg" width="420" height="240">  <img src="https://user-images.githubusercontent.com/103825664/219969728-ab21b214-299a-4661-a700-9e100443f3f5.jpeg" width="420" height="240">
 
