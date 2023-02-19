@@ -16,3 +16,7 @@ The steps taken to complete this project are as follows:
 
 
 #### Camera Calibration
+
+Cameras introduce distortion to images. Two major kinds of distortion are radial distortion and tangential distortion.
+Radial distortion causes straight lines to appear curved. Radial distortion becomes larger the farther points are from the center of the image. Similarly, tangential distortion occurs because the image-taking lense is not aligned perfectly parallel to the imaging plane. So, some areas in the image may look nearer than expected. 
+I started by preparing "object points", which will be the (x,y,z) coordinates of the chessboard corners. The provided sample images of chessboards are fixed on the (x,y) plane at z=0, such that the object points are the same for each calibration image. Thus, objp is just a replicated array of coordinates, and objpoints will be appended with a copy of it every time all of the chessboard corners are successfully detected in a sample image. With each successful chessboard detection, imgpoints will be appended with the (x,y) pixel position of each of the corners. I then used the output objpoints and imgpoints to compute the camera calibration and distortion coefficients using the OpenCV calibrateCamera() function. The resulting camera matrix and distortion coefficients are then used to undistort images using the OpenCV undistort() function. Here an original image (left) and an undistorted image (right):
