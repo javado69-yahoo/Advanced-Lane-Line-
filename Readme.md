@@ -46,7 +46,7 @@ When we apply the thresholding for the gradient magnitude it picks up the lane l
 A perspective transform maps the points in a given image to different, desired, image points with a new perspective. The bird’s-eye view transform that let’s us view a lane from above; this will be useful for calculating the lane curvature. I used the OpenCV functions getPerspectiveTransform() and warpPerspective() to generate a bird's-eye.
 I chose the source points and destination points in the way that the lane lines be parallel in bird-view transform and perform the transform following:
 
-<img src="https://user-images.githubusercontent.com/103825664/219979725-af04869c-049d-4b14-9d84-af3a01ba0995.png" width="420" height="240">
+<img src="https://user-images.githubusercontent.com/103825664/219979725-af04869c-049d-4b14-9d84-af3a01ba0995.png" width="840" height="240">
 
 
 
