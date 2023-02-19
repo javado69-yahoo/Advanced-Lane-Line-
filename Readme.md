@@ -23,3 +23,12 @@ I started by preparing "object points", which will be the (x,y,z) coordinates of
 
 <img src="https://user-images.githubusercontent.com/103825664/219966068-e291dbe0-99c9-4960-a7a5-fb86b06758fc.jpg" width="420" height="240"> <img src="https://user-images.githubusercontent.com/103825664/219966217-ab3a1e80-0fc2-4195-8633-8c46e7e80af5.jpg" width="420" height="240">
 
+### Distortion Correction
+
+
+
+Using the camera matrix and distortion coefficients produced in the previous step, I undistort all incoming raw images using the OpenCV undistort() function.
+<img src="https://user-images.githubusercontent.com/103825664/219967350-6bca29ac-750f-4381-ba37-98a41879a693.jpg" width="420" height="240"> <img src="https://user-images.githubusercontent.com/103825664/219967373-2c9f56da-72af-4105-91a7-f5183d272764.jpg" width="420" height="240">
+
+
+
