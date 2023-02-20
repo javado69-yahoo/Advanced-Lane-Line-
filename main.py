@@ -6,7 +6,7 @@ from moviepy.editor import VideoFileClip
 from thresholds import mag_thresh, dir_thresh, color_thresh
 
 
-class LaneTracker:
+class LaneFinder:
 
     def __init__(self, mtx, dist):
         # matrix from calibrating camera
@@ -196,3 +196,13 @@ class LaneTracker:
         cv2.putText(result,'Vehicle is '+str(abs(round(self.line_base_pos,3)))+'m '+side_pos+' of center',(50,100), cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),2)
 
         return result
+    
+dist_pickle = pickle.load(open('.calibration_pickle.p', 'rb'))
+mtx = dist_pickle['mtx']
+dist = dist_pickle['dist']
+lane_Finder = LaneFinder(mtx, dist)
+
+# Apply lane lines to each frame of input video and save as new video file
+clip1 = VideoFileClip("project_video.mp4").subclip(0,5)
+video_clip = clip1.fl_image(lane_Finder.apply_lines)
+video_clip.write_videofile('output_video', audio=False)
